@@ -5,6 +5,7 @@ window.mediaCheck = (options) ->
   convertEmToPx = undefined
   getPXValue = undefined
   hasMatchMedia = window.matchMedia isnt `undefined` and !!window.matchMedia("!").addListener
+  console.log options
 
   if hasMatchMedia
     mqChange = (mq, options) ->
@@ -105,4 +106,6 @@ window.mediaCheck = (options) ->
       if window.attachEvent
         window.attachEvent "onresize", mmListener
 
-    mmListener()
+    if options.runonload == undefined or options.runonload == true
+      mmListener()
+      return

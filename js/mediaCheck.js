@@ -6,7 +6,7 @@
 
   http://github.com/sparkbox/mediaCheck
 
-  Version: 0.4.6, 12-02-2015
+  Version: 0.4.6, 12-05-2015
   Author: Rob Tarr (http://twitter.com/robtarr)
 */
 (function() {
@@ -18,6 +18,7 @@
     convertEmToPx = void 0;
     getPXValue = void 0;
     hasMatchMedia = window.matchMedia !== undefined && !!window.matchMedia("!").addListener;
+    console.log(options);
     if (hasMatchMedia) {
       mqChange = function(mq, options) {
         if (mq.matches) {
@@ -132,7 +133,9 @@
           window.attachEvent("onresize", mmListener);
         }
       }
-      return mmListener();
+      if (options.runonload === void 0 || options.runonload === true) {
+        mmListener();
+      }
     }
   };
 
