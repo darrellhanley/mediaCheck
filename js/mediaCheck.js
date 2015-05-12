@@ -18,7 +18,6 @@
     convertEmToPx = void 0;
     getPXValue = void 0;
     hasMatchMedia = window.matchMedia !== undefined && !!window.matchMedia("!").addListener;
-    console.log(options);
     if (hasMatchMedia) {
       mqChange = function(mq, options) {
         if (mq.matches) {

@@ -5,7 +5,6 @@ window.mediaCheck = (options) ->
   convertEmToPx = undefined
   getPXValue = undefined
   hasMatchMedia = window.matchMedia isnt `undefined` and !!window.matchMedia("!").addListener
-  console.log options
 
   if hasMatchMedia
     mqChange = (mq, options) ->
